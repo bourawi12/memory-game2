@@ -34,10 +34,12 @@ body{
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    transform: scale(1);
     border: 2px solid aqua;
 }
 .memory-card:active {
 transform: scale(.97);
+transition :scale(1);
 }
 .front-face,
 .back-face{
