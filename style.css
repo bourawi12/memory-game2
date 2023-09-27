@@ -5,8 +5,43 @@
 }
 body{
     height:100vh;
+    display: flex;
     background-color: #BA181B;
 }
-img{
-    width: 100px;
+.flex-item{
+    flex: 1;
 }
+.flex-container  {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    display: flex;
+    background-color: DodgerBlue;
+}
+.memory-game   {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid lime;
+}
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33% - 10px);
+    margin: 5px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid aqua;
+}
+.front-face,
+.back-face{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border: 2px solid deeppink;
+}
+
