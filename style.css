@@ -36,6 +36,9 @@ body{
     flex-wrap: wrap;
     border: 2px solid aqua;
 }
+.memory-card:active {
+transform: scale(.97);
+}
 .front-face,
 .back-face{
     width: 100%;
