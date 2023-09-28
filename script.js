@@ -1,4 +1,6 @@
 const cards = document.querySelectorAll('.memory-card');
+let hasflippedcard=false;
+let firstcard,secondcard;
 function handleEvent(event) {
   let id = event.target.id;
   // Rest of your code using the id
@@ -8,12 +10,36 @@ function handleEvent(event) {
 // Attach an event listener and pass the event object to the handler
 this.addEventListener('click', handleEvent);
 function flipCard() {
-  console.log('i was clicked!');
-  console.log(this);
   this.classList.toggle('flip');
+  if(!hasflippedcard){
+    //the first click
+    hasflippedcard=true;
+    firstcard=this;
+    
+  }else{
+    //second pick
+    hasflippedcard= false ;
+    secondcard=this;
+    // do cards match ?
+    console.log(firstcard.dataset.framework);
+    console.log(secondcard.dataset.framework);
+    if (firstcard.dataset.framework === secondcard.dataset.framework) {
+      // It's a match
+      console.log("Match!!");
+      firstcard.removeEventListener('click', flipCard);
+      secondcard.removeEventListener('click', flipCard);
+    }
+    
+    else{
+      firstcard.classList.remove('flip');
+      secondcard.classList.remove('flip');
+    }
+  }
+  
 }
 
 cards.forEach((card) => {
+  
   card.addEventListener('click',flipCard);
   //console.log(id);
 });
