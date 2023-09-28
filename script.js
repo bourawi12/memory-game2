@@ -23,21 +23,32 @@ function flipCard() {
     // do cards match ?
     console.log(firstcard.dataset.framework);
     console.log(secondcard.dataset.framework);
-    if (firstcard.dataset.framework === secondcard.dataset.framework) {
-      // It's a match
-      console.log("Match!!");
-      firstcard.removeEventListener('click', flipCard);
-      secondcard.removeEventListener('click', flipCard);
-    }
-    
-    else{
-      setTimeout(() => {
-      firstcard.classList.remove('flip');
-      secondcard.classList.remove('flip');
-    },1500);
-    }
+    checkForMatch();
   }
   
+}
+function checkForMatch(){
+  if (firstcard.dataset.framework === secondcard.dataset.framework) {
+    // It's a match
+    disableCards();
+    
+  }
+  
+  else{
+    unflipCards();
+    
+  }
+}
+function disableCards(){
+  console.log("Match!!");
+    firstcard.removeEventListener('click', flipCard);
+    secondcard.removeEventListener('click', flipCard);
+}
+function unflipCards(){
+  setTimeout(() => {
+    firstcard.classList.remove('flip');
+    secondcard.classList.remove('flip');
+  },1500);
 }
 
 cards.forEach((card) => {
