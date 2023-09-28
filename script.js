@@ -31,8 +31,10 @@ function flipCard() {
     }
     
     else{
+      setTimeout(() => {
       firstcard.classList.remove('flip');
       secondcard.classList.remove('flip');
+    },1500);
     }
   }
   
