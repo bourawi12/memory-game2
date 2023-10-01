@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.memory-card');
 let hasflippedcard=false;
+let lockboard =false ;
 let firstcard,secondcard;
 function handleEvent(event) {
   let id = event.target.id;
@@ -10,6 +11,7 @@ function handleEvent(event) {
 // Attach an event listener and pass the event object to the handler
 this.addEventListener('click', handleEvent);
 function flipCard() {
+  
   this.classList.toggle('flip');
   if(!hasflippedcard){
     //the first click
