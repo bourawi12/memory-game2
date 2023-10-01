@@ -54,7 +54,11 @@ transition :transform .2s;
     
     position: absolute;
     backface-visibility: hidden;
+<<<<<<< HEAD
     background: blue;
+=======
+    
+>>>>>>> e444cc965fb7b4b75a0d736b4a79f297cf52f03d
     border: 2px solid deeppink;
 }
 .front-face{
